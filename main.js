@@ -1,3 +1,20 @@
+currentQuestion = 1
+quizData = [
+    ["1) Qual foi o local do nosso primeiro encontro?", "Lagoa", "Praia de Copacabana", "Sua casa"],
+    ["2) Qual é a minha comida favorita?", "Pastel", "Pizza", "Hamburguer"],
+    ["3) O que eu mais gosto em você?", "Bunda", "Sua beleza interior", "Seus olhos"],
+    ["4) Nossa melhor lembrança juntos:"]
+]
+function selectSendButton(clickedId){
+    selectedRadio = document.querySelector('input[type="radio"]:checked').id
+    console.log(selectedRadio)
+
+    // Uncheck radio btn
+    document.querySelector('input[type="radio"]:checked').checked = false;
+}
+
+
+
 isXTurn = false
 function selectPosition(clickedId) {
     clickedElement = document.getElementById(clickedId)
