@@ -1,16 +1,50 @@
-currentQuestion = 1
+currentQuestion = 0
+score = 0
 quizData = [
-    ["1) Qual foi o local do nosso primeiro encontro?", "Lagoa", "Praia de Copacabana", "Sua casa"],
-    ["2) Qual é a minha comida favorita?", "Pastel", "Pizza", "Hamburguer"],
-    ["3) O que eu mais gosto em você?", "Bunda", "Sua beleza interior", "Seus olhos"],
-    ["4) Nossa melhor lembrança juntos:"]
+    ["1) Qual foi o local do nosso primeiro encontro?", "Lagoa", "Praia de Copacabana", "Sua casa", 2],
+    ["2) Qual é a minha comida favorita?", "Pastel", "Pizza", "Hamburguer", 2],
+    ["3) O que eu mais gosto em você?", "Bunda", "Sua beleza interior", "Seus olhos", 1],
+    ["4) Nossa melhor lembrança juntos?", "A gente fazendo exercícios (em todos os sentidos)", "Atravessando a ponte de Budapeste", "Vendo Baby Yoda", 1],
+    ["5) Qual é o nossa sére favorita?", "Mandalorian", "Série de época", "Naruto", 1],
+    ["6) Qual é nossa música romântica?","BYOB", "Just two of us", "Música tema do Mandalorian", 2],
+    ["7) Que apelido carinhoso você me dá?", "Cinema", "Movie", "Mozi", 3],
+    ["8) Se pudéssemos nos aposentar agora para qualquer lugar, para onde iríamos?", "Japão", "Suíça", "Laje no Leblon", 3]
 ]
 function selectSendButton(clickedId){
+    //Get selected radio
     selectedRadio = document.querySelector('input[type="radio"]:checked').id
-    console.log(selectedRadio)
 
+    //Update score
+    if (selectedRadio == quizData[currentQuestion][4] && currentQuestion < 8) {
+        score = score + 1
+        document.getElementById("score-text").innerHTML = "Sua pontuação " + score + "/8"
+    }
+
+    //Update text success/failed message
+    if (score == 8) {
+        test = document.getElementById("result-success")
+        test.style.display = "inline"
+    }
+    if (currentQuestion == 7 && score < 8 ) {
+        element = document.getElementById("result-failed")
+        element.style.display = "inline"
+    }
+    
+    //Update current question
+    if (currentQuestion < 7){
+        currentQuestion = currentQuestion + 1
+        labelsArray = document.getElementsByTagName("label")
+        question = document.getElementsByClassName("question")
+        
+        question[0].innerHTML = quizData[currentQuestion][0]
+        labelsArray[0].innerHTML = quizData[currentQuestion][1]
+        labelsArray[1].innerHTML = quizData[currentQuestion][2]
+        labelsArray[2].innerHTML = quizData[currentQuestion][3]
+    }
     // Uncheck radio btn
     document.querySelector('input[type="radio"]:checked').checked = false;
+
+
 }
 
 

@@ -11,7 +11,7 @@ div.column.flex-container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 95vw;
+    width: 100vw;
     height: 95vh;
     
   }
