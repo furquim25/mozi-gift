@@ -1,0 +1,64 @@
+html {background-color: rgb(226, 223, 223)}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+div.column.flex-container {
+    background-color: rgba(158, 177, 75, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95vw;
+    height: 95vh;
+    
+  }
+
+div.flex-container.row {
+    background-color: rgba(24, 50, 168, 0.473);
+    display: flex;
+
+  }
+
+div.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(226, 223, 223);
+    width: 100px;
+    height: 100px;
+    font-size: 100px;
+  }
+
+/* Draw lines */
+#pos1, #pos2, #pos3 {
+    margin-bottom: 5px;
+  }
+
+#pos7, #pos8, #pos9 {
+  margin-top: 5px;
+}
+
+#pos2, #pos5, #pos8 {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+div.board {
+  position:relative;
+}
+div.line {
+  display: none;
+  position:absolute;
+  z-index: 999999;
+  width: 140%;
+  height: 5px; 
+  top: -1%;
+  left:0;
+  border-radius: 3px;
+  background-color: rgb(255, 0, 0);
+  transform-origin: top left;
+  rotate: 45deg;
+}
