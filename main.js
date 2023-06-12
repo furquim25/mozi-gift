@@ -24,10 +24,12 @@ function selectSendButton(clickedId){
     if (score == 8) {
         test = document.getElementById("result-success")
         test.style.display = "inline"
+        document.querySelector("button").style.display = 'none'
     }
     if (currentQuestion == 7 && score < 8 ) {
         element = document.getElementById("result-failed")
         element.style.display = "inline"
+        document.querySelector("button").style.display = 'none'
     }
     
     //Update current question
